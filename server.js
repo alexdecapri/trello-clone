@@ -12,8 +12,12 @@ var port = 8000;
 //STEP 6 - Finally grab section 2 at the bottom of this file and drop it here:
 
 //STEP 3 - Code for your app.listen() here:
-app.listen(port, function() {
+app.listen(port, function() { //will appear in terminal when server is running
   console.log("I am watching you... " + port);
+})
+
+app.get("/api/test", function(req, res) { //don't use port+"/api/test" -- won't work
+  res.send("Successful request, congrats!");
 })
 
 //STEP 4 - Test your server. You should be able to run nodemon in your terminal and see your console.log that you put in your app.listen callback function. If you see that, you are in business!
