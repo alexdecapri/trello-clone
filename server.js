@@ -1,6 +1,10 @@
 var express = require('express');
 //STEP 6 - Find Section 1 code below and paste it here
-
+// var session = require('express-session');
+// var bodyParser = require('body-parser');
+var cors = require('cors');
+// var morgan = require('morgan');
+// var mongoose = require('mongoose');
 var app = express();
 var port = 8000;
 // STEP 5 - Server your public files to the browser here

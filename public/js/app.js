@@ -8,13 +8,13 @@ app.config(function($urlRouterProvider, $stateProvider) {
     .state("auth", {
       url: "/",
       controller: "AuthCtrl",
-      templateUrl: "public/views/authView.html"
+      templateUrl: "views/authView.html"
     })
 
     .state("todo", {
       url: "/list",
       controller: "MainCtrl",
-      templateUrl: "public/views/mainView.html",
+      templateUrl: "views/mainView.html",
       resolve: {
         lists: function(listService) {
           return listService.getLists();
