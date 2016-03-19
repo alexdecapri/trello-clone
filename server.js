@@ -8,24 +8,26 @@ var port = 8000;
 
 // STEP 1 - Fire up your server, and make sure you get the console.log in your terminal
 // STEP 2 - Code here for your endpoint:
-
+app.get("/api/test", function(req, res) {
+  res.send("the request was successful oh yeaaah");
+});
 
 // STEP 3 - Test this endpoint with Postman (You will need to download postman if you haven't already)
 
-// STEP 4 - In the public directory, build an Angular app that you can use to test this api. You should 
-// have these three connecting peices in your Angular app: authView, authCtrl, and the listService. 
+// STEP 4 - In the public directory, build an Angular app that you can use to test this api. You should
+// have these three connecting peices in your Angular app: authView, authCtrl, and the listService.
 
 // STEP 7 - Find Section 2 code below and paste it here
 
 
 // Step 8 - Uncomment all the code from the angular app, and test your trello app again. You should take a
 // minute to look through all of the HTTP requests that are happening on the front end, and find the matching
-// endpoints here in the server, so that you can get a feel for how the connection is happening betweent the 
+// endpoints here in the server, so that you can get a feel for how the connection is happening betweent the
 // front end and the server.
 
 
 app.listen(port, function() {
-    console.log('Server listening on port ' + port);
+    console.log('Server listening (for day 2) on port ' + port);
 });
 
 

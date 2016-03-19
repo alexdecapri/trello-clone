@@ -1,5 +1,9 @@
 // Code here for your authCtrl.js to test the endpoint
+var app = angular.module("trelloClone");
 
+app.controller("AuthCtrl", function($scope, $state, authService) {
+  $scope.test = "auth";
+})
 
 
 
