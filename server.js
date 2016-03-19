@@ -4,6 +4,7 @@ var session = require('express-session');
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var morgan = require("morgan");
+var mongoose = require("mongoose");
 var app = express();
 var port = 8000;
 
@@ -42,33 +43,33 @@ app.listen(port, function() {
 //// SECTION ONE ////
 /////////////////////
 
-// app.use(session({
-//     secret: 'carpediem',
-//     saveUninitialized: false,
-//     resave: false
-// }));
+app.use(session({
+    secret: 'carpediem',
+    saveUninitialized: false,
+    resave: false
+}));
 
-// var isAuthenticated = function (req, res, next) {
-//     if (req.session.user) {
-//         next();
-//     } else {
-//         return res.status(403).send('Please login first')
-//     }
-// }
+var isAuthenticated = function (req, res, next) {
+    if (req.session.user) {
+        next();
+    } else {
+        return res.status(403).send('Please login first')
+    }
+}
 
 
 // /**************** API Controller *************/
-// var UserCtrl = require('./api/controllers/UserCtrl.js');
-// var ListCtrl = require('./api/controllers/ListCtrl.js')
+var UserCtrl = require('./api/controllers/userCtrl.js');
+var ListCtrl = require('./api/controllers/listCtrl.js')
 
 
 // /**************** API *************/
 
-// app.post('/auth/login', UserCtrl.login);
+app.post('/auth/login', UserCtrl.login);
 
 // app.get('/auth/logout', UserCtrl.logout);
 
-// app.get('/api/getLists', isAuthenticated, ListCtrl.getLists)
+app.get('/api/getLists', isAuthenticated, ListCtrl.getLists)
 
 // app.post('/api/addList', isAuthenticated, ListCtrl.addList);
 
@@ -84,11 +85,11 @@ app.listen(port, function() {
 
 
 // /*************** DB ***************/
-// var mongoUri = 'mongodb://localhost:27017/betterTodo';
-// mongoose.connect(mongoUri);
+var mongoUri = 'mongodb://localhost:27017/betterTodo';
+mongoose.connect(mongoUri);
 
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error: '));
-// db.once('open', function() {
-//     console.log('connected to db at ' + mongoUri)
-// });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error: '));
+db.once('open', function() {
+    console.log('connected to db at ' + mongoUri)
+});

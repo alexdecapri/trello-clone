@@ -9,7 +9,7 @@ app.config(function ($urlRouterProvider, $stateProvider) {
             controller: 'AuthCtrl',
             templateUrl: '../views/authView.html'
         })
-        .state('todo', {
+        .state('list', {
             url: '/list',
             controller: 'MainCtrl',
             templateUrl: '../views/mainView.html',

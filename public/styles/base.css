@@ -34,6 +34,22 @@ body, html {
     padding: 0;
 }
 
+/* my info here*/
+button {
+  font-family: "Roboto Slab";
+  color: white;
+  background-color: #1976D2;
+  height: 30px;
+  width: 70px;
+  vertical-align: baseline;
+  border-radius: 7px;
+}
+input {
+  background-color: white;
+  color: #1976D2;
+  margin-left: 20px;
+}
+
 /*2F3F43*/
 
 strong {
@@ -254,4 +270,3 @@ header h1 {
 .card.grabbing {
      cursor: -webkit-grabbing;
  }
-

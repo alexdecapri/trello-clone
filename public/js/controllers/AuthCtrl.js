@@ -7,21 +7,25 @@ angular
 
         $scope.test = 'auth';
 
+        $scope.login = function() {
+          console.log("username: ", $scope.username);
+          $state.go("list");
+        }
         $scope.handleEnterOnInput = function (event) {
             if (event.keyCode === 13) {
                 $scope.login();
             }
         };
 
-        $scope.login = function () {
-            authService.login($scope.username)
-                .then(function (response) {
-                    $state.go('todo')
-                })
-                .catch(function (err) {
-                    console.log(err);
-                })
-        };
+        // $scope.login = function () {
+        //     authService.login($scope.username)
+        //         .then(function (response) {
+        //             $state.go('todo')
+        //         })
+        //         .catch(function (err) {
+        //             console.log(err);
+        //         })
+        // };
 
         $scope.logout = function () {
             authService.logout()

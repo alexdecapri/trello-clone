@@ -31,19 +31,19 @@ and open in browser: localhost:8000
 ### Project introduction
 
 ####
-In this project, you will be building a full-stack app that will be a clone of trello.com. In order to get started, you will need to clone [THIS](https://github.com/DevMountain/trello-clone) repo. You will automatically be on the `master` branch. This branch is the project solution. You may refer to this code if you need to. For each day, you will need to checkout to a new branch. In the new branches we have removed the code that you will be working on that day, but we have left in the rest of the code for the rest of the project. This will give you the ability to test the app after you finish each day's work. After you finish everything for that day, you will be able to fire up your project and see it in your browser. If it pulls up okay, and everything is working, then you know you finished the day's work correctly. If it doesn't work, then you will some more work to do. 
+In this project, you will be building a full-stack app that will be a clone of trello.com. In order to get started, you will need to clone [THIS](https://github.com/DevMountain/trello-clone) repo. You will automatically be on the `master` branch. This branch is the project solution. You may refer to this code if you need to. For each day, you will need to checkout to a new branch. In the new branches we have removed the code that you will be working on that day, but we have left in the rest of the code for the rest of the project. This will give you the ability to test the app after you finish each day's work. After you finish everything for that day, you will be able to fire up your project and see it in your browser. If it pulls up okay, and everything is working, then you know you finished the day's work correctly. If it doesn't work, then you will some more work to do.
 
-Now, at the start of each new day (section), you will need to checkout to the branch that will be associated to that day. So, to start today's work, open your terminal, and navigate (cd) to the root of this project. If you run `ls`, you should see `server.js`. From there, run this command in your terminal: `git checkout day-one`. Now you are ready start today's work. Each day you will run that same command, but with the new branch for that day (ie. `day-two`, `day-three`, etc.). 
+Now, at the start of each new day (section), you will need to checkout to the branch that will be associated to that day. So, to start today's work, open your terminal, and navigate (cd) to the root of this project. If you run `ls`, you should see `server.js`. From there, run this command in your terminal: `git checkout day-one`. Now you are ready start today's work. Each day you will run that same command, but with the new branch for that day (ie. `day-two`, `day-three`, etc.).
 
-Finally, instructions for building this project are in the [Project Guide](http://projectguide.devmounta.in/#/trello-clone). In the project files themselves there will be a few comments and instructions to give you a little bit of a guide, but you will want to follow the instructions in the project guide. 
- 
+Finally, instructions for building this project are in the [Project Guide](http://projectguide.devmounta.in/#/trello-clone). In the project files themselves there will be a few comments and instructions to give you a little bit of a guide, but you will want to follow the instructions in the project guide.
+
 If you have any feedback on the project, or instructions, you can make a change in the project, or on the README.md, then submit a pull request to the DevMountain repository, and we will review those changes. (It will happen a lot faster if you message the link to your pull request to your teacher).
- 
+
 Have fun!
 
 ### Project Setup
 
-#### 
+####
 You will probably notice that the file structure is different than the last project. This setup organizes files by file type. So, in your angular app, you will see that all of the controllers are in one directory, and then the services are in a seperate directory. In the `views` directory, you will see another directory called `partials`. This directory is used for html templates that are used by the directives in this project.
 
 Project organization is determined by the project itself, and then the developers working on the project. You will see different styles of organization used in the programing world, and will probably quickly come to have your own preference for organization.
@@ -301,7 +301,7 @@ Your code may look something like this:
 ##### authCtrl.js
 ```
 $scope.login = function() {
-    console.log("username: ", username);
+    console.log("username: " + username);
     $state.go('list');
 };
 ```
@@ -311,4 +311,3 @@ Remember to style this form. The default `<button>` tag is horrific, and definit
 ## MongoDB Intro (Day 4)
 
 ###
-
