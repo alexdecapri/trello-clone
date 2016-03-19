@@ -7,6 +7,8 @@ var cors = require('cors');
 // var mongoose = require('mongoose');
 var app = express();
 var port = 8000;
+app.use(express.static(__dirname + '/public'));
+
 // STEP 5 - Server your public files to the browser here
 
 
