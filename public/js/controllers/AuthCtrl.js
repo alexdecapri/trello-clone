@@ -9,7 +9,11 @@ angular
 
         $scope.login = function() {
           console.log("username: ", $scope.username);
-          $state.go("list");
+          authService.login($scope.username).then(function(results){
+            console.log(results);
+            $state.go("list");
+          });
+
         }
         $scope.handleEnterOnInput = function (event) {
             if (event.keyCode === 13) {
