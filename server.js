@@ -3,10 +3,14 @@ var bodyParser = require('body-parser');
 var cors = require('cors');
 var morgan = require('morgan');
 // STEP 1 - Import the mongojs library here
+var mongojs = require("mongojs");
+
 
 
 var app = express();
 // STEP 2 - Define the "db" variable here, and define the MongoDB instance you want to use
+var db = mongojs("trello-clone", ["lists"]);
+
 
 var port = 8000;
 
@@ -18,7 +22,52 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 // STEP 3 - Build your server's endpoints with all the database commands here
+app.get("/api/list", function(req, res) {
+  db.lists.find(function(err, response) {
+    if(err) {
+      res.status(500).json(err);
+    } else {
+      res.json(response);
+    }
+  });
+});
 
+app.post("/api/list", function(req, res) {
+  db.lists.save(req.body, function(err, response) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json(response);
+    }
+  })
+});
+
+app.put("/api/list", function(req, res) {
+  db.lists.findAndModify({
+    query: {
+      _id: mongojs.ObjectId(req.query.id)
+    },
+    update: {
+      $set: req.body
+    },
+  }, function(err, response) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json(response);
+    }
+  });
+});
+
+app.delete("/api/list", function(req, res) {
+  db.lists.remove({ _id: mongojs.ObjectId(req.query.id) }, function(err, response) {
+    if (err) {
+      res.status(500).json(err);
+    } else {
+      res.json(response); //could use res.send and get same result formatted as json (Because body-parser is running!!!)
+    }
+  });
+});
 
 
 //STEP 4 - In your terminal, run 'mongod', then in a new tab run 'nodemon server.js'. This will start up your
@@ -31,7 +80,7 @@ app.listen(port, function() {
 });
 
 
-//STEP 5 - What you built today won't be used in the final project. That is because in the next two classes, we 
+//STEP 5 - What you built today won't be used in the final project. That is because in the next two classes, we
 // will show you better ways to handle what we have done. Now... Before you say "Well, we should learn that way
 // first, shouldn't we?", just know that there is wisdom to taking this one step at a time. What we learn in the
 // next couple classes will build from what you have learned today. With all of that said, you can use the code
