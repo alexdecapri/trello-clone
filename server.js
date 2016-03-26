@@ -7,8 +7,6 @@ var mongoose = require('mongoose');
 var app = express();
 var port = 8000;
 
-var test = "test";
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
