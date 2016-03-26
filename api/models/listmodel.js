@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 
 var List = new Schema({
   name: {type: String, required: true}
+  // user: [{type: Schema.ObjectId, ref: "User"}]
 });
 
 module.exports = mongoose.model("List", List);

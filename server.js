@@ -40,13 +40,16 @@ var isAuthenticated = function (req, res, next) {
     }
 };
 //STEP 3 - import your controller modules here
-// var listCtrl = require("./api/controllers/listCtrl");
+
+var listCtrl = require("./api/controllers/listCtrl");
 var userCtrl = require("./api/controllers/userCtrl");
 
 //STEP 4 - Build your endpoints here - If you want to test the project,
 // you will need to replace your endpoints with those from Section 1 below
 
-
+app.get("/lists", listCtrl.getLists);
+app.post("/lists", listCtrl.addList);
+app.delete("/lists", listCtrl.deleteList); //use a query, not params
 
 
 

@@ -1,7 +1,7 @@
 {
   "name": "trello-clone",
   "version": "1.0.0",
-  "description": "",
+  "description": "```\r npm install\r ```",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,15 +11,22 @@
   "license": "MIT",
   "homepage": "https://github.com/dustinmyers/trello-clone",
   "dependencies": {
-    "body-parser": "^1.14.1",
+    "body-parser": "^1.15.0",
     "cors": "^2.7.1",
-    "express": "^4.13.3",
-    "express-session": "^1.12.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "gulp": "^3.9.1",
     "gulp-less": "^3.0.5",
     "mongodb": "^2.0.48",
-    "mongoose": "^4.2.4",
-    "morgan": "^1.6.1",
+    "mongoose": "^4.4.10",
+    "morgan": "^1.7.0",
     "underscore": "^1.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexdecapri/trello-clone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexdecapri/trello-clone/issues"
   }
 }

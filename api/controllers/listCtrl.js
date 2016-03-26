@@ -1,16 +1,35 @@
 //Build out your list controller here:
+var List = require("../models/listModel");
 
+module.exports = {
 
+  getLists: function(req,res) {
+    List.find()
+      .exec(function(err, result) {
+        if (err) return res.status(500).send(err);
+        else res.send(result);
+      });
+  },
 
+  addList: function(req, res) {
+    var newList = new List(req.body);
+    newList.save(function(err, result) {
+      if (err) return res.status(500).send(err);
+      else res.send(result);
+    });
+  },
 
+  deleteList: function(req, res) {
+    List.findByIdAndRemove(req.query.id, function(err, result) {
+      if (err) return res.status(500).send(err);
+      else res.send(result);
+    });
+  }
 
-
-
-
+}
 
 
 //If you want to test the project, comment out your code, and use the code below:
-
 
 
 //// List functions
