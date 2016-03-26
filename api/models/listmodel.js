@@ -1,4 +1,3 @@
-// Build out your model here:
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
@@ -9,8 +8,8 @@ var List = new Schema({
   },
   cards: [{
     type: String,
-    required, true
+    required: true
   }]
-})
+});
 
 module.exports = mongoose.model("List", List);

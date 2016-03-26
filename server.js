@@ -29,27 +29,30 @@ var isAuthenticated = function (req, res, next) {
 
 
 /**************** API Controller *************/
-var UserCtrl = require('./api/controllers/UserCtrl.js');
-var ListCtrl = require('./api/controllers/ListCtrl.js')
+var UserCtrl = require('./api/controllers/userCtrl.js');
+var ListCtrl = require('./api/controllers/listCtrl.js')
 
 
 /**************** API *************/
 
-app.post('/auth/login', UserCtrl.login);
+app.get("/api/lists", isAuthenticated, ListCtrl.getLists);
 
-app.get('/auth/logout', UserCtrl.logout);
 
-app.get('/api/getLists', isAuthenticated, ListCtrl.getLists)
-
-app.post('/api/addList', isAuthenticated, ListCtrl.addList);
-
-app.post('/api/deleteList', isAuthenticated, ListCtrl.deleteList);
-
-app.post('/api/addCard', isAuthenticated, ListCtrl.addCard);
-
-app.post('/api/deleteCard', isAuthenticated, ListCtrl.deleteCard);
-
-app.post('/api/moveCard', isAuthenticated, ListCtrl.moveCard);
+// app.post('/auth/login', UserCtrl.login);
+//
+// app.get('/auth/logout', UserCtrl.logout);
+//
+// app.get('/api/getLists', isAuthenticated, ListCtrl.getLists)
+//
+// app.post('/api/addList', isAuthenticated, ListCtrl.addList);
+//
+// app.post('/api/deleteList', isAuthenticated, ListCtrl.deleteList);
+//
+// app.post('/api/addCard', isAuthenticated, ListCtrl.addCard);
+//
+// app.post('/api/deleteCard', isAuthenticated, ListCtrl.deleteCard);
+//
+// app.post('/api/moveCard', isAuthenticated, ListCtrl.moveCard);
 
 /************ END API *************/
 

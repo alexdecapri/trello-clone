@@ -8,8 +8,8 @@ var User = new Schema({
     required: true
   },
   "lists": [{
-    type: Schema.ObjectId,
-    ref: "List"
+    type: Schema.Types.ObjectId, //check this too
+    ref: "List" //don't need to require listmodel to use this
   }]
 });
 

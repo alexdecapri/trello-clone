@@ -1,4 +1,4 @@
-var User = require('../models/UserModel.js');
+var User = require('../models/userModel.js');
 
 module.exports = {
     //save or find user
